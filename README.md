@@ -44,13 +44,11 @@ wagn-doc
     * Pointer
 
       Pointer cards let you create and maintain lists of cards.
-
     * Search
 
       Search cards let you query for cards using the Wagn Query Language (WQL, pronounced "wuckle") .
 
       { "type": "User" }
-
     * Set + Setting = Rule
 
       A set is a card that defines a group of cards.
