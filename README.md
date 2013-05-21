@@ -29,5 +29,15 @@ wagn-doc
       + Including image cards
       + Sizing and location
 
-        {{nymph|size:small}} {{nymph|float:left}}
+          {{nymph|size:small}} {{nymph|float:left}}
+      + Images as links
+
+          [[Grass Commons|{{Grass Commons+logo}}]]
+    * Phrase & PlainText
+
+      Phrase cards contain text, much like Basic cards, but without linking or bold, italics, and other layout and styling.
+      PlainText are the same except that the editing area is a few lines long.
+
+
+
 
