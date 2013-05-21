@@ -5,6 +5,10 @@ wagn-doc
 
   Not only is all the text on Wagn stored in cards, but images, files, users, settings, and searches are all cards.
 
+  Tips
+  * To make a link to create a new card: /card/new (see web address for everything).
+  * To make links that create new cards of a specified type, use something like: /new/Recipe
+
 1. Editing
 
   To edit a card, click on its Edit tab, or double-click anywhere in the content of the card.
@@ -40,6 +44,21 @@ wagn-doc
     * Pointer
 
       Pointer cards let you create and maintain lists of cards.
+
+    * Search
+
+      Search cards let you query for cards using the Wagn Query Language (WQL, pronounced "wuckle") .
+
+      { "type": "User" }
+
+    * Set + Setting = Rule
+
+      A set is a card that defines a group of cards.
+      + all (All Cards)
+      + Basic+*type (All Basic Cards)
+      + Wiki on Wheels+*self (Just "Wiki on Wheels")
+
+
 1. Inclusion
   
   Cards can include other cards inside them.
@@ -47,6 +66,40 @@ wagn-doc
     * Keep data current. a card's updates (e.g., an address or event info) appear everywhere it's included.
     * Display the same card in different ways using inclusion views.  Eg, closed view let you use space more efficiently.
     * Specify content patterns with inclusion-based formats.
+
+  {{Wiki on Wheels}}
+
+  {{Wiki on Wheels|open}}
+
+  {{Wiki on Wheels|closed}} 
+
+  {{nymph|name}}
+
+  {{nymph|link}}
+
+  Specifying view of cards in lists
+
+  {{sample user search | open; item:link}}
+
+  Tips
+    * You can edit included cards by double-clicking anywhere in them, or clicking on the Edit in the enclosing card's header.
+    * Inclusions are inline, so you can use them in a sentence.
+    * When you're including a card that doesn't exist yet, you can specify what type it should be with something like {{Tel|type:Phrase}}. 
+
+1. Formatting
+  
+  Forms are content patterns.
+  Forms are settings, meaning configurations that can apply to any set of cards.
+    * default
+
+      The *default setting controls the initial content for cards in a set.  If you change a *default setting, it won't impact existing cards in the set.
+    * structure  
+
+      The *structure setting controls the structure of cards in a set on an ongoing basis.  If you change a *structure setting, it will impact every card in the set.
+
+  Tips
+    * Checkboxes, radio buttons, and other form elements can be added using Pointers.
+    * You can add help text that shows up when inclusions are being created or edited.
 
 
 
