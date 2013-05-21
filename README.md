@@ -37,6 +37,16 @@ wagn-doc
 
       Phrase cards contain text, much like Basic cards, but without linking or bold, italics, and other layout and styling.
       PlainText are the same except that the editing area is a few lines long.
+    * Pointer
+
+      Pointer cards let you create and maintain lists of cards.
+1. Inclusion
+  
+  Cards can include other cards inside them.
+    * Edit inclusions in place, making them faster and easier than editing whole pages.
+    * Keep data current. a card's updates (e.g., an address or event info) appear everywhere it's included.
+    * Display the same card in different ways using inclusion views.  Eg, closed view let you use space more efficiently.
+    * Specify content patterns with inclusion-based formats.
 
 
 
