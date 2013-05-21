@@ -5,6 +5,8 @@ wagn-doc
 
   Not only is all the text on Wagn stored in cards, but images, files, users, settings, and searches are all cards.
 
+  Every card has a unique name.
+
   Tips
   * To make a link to create a new card: /card/new (see web address for everything).
   * To make links that create new cards of a specified type, use something like: /new/Recipe
@@ -87,6 +89,7 @@ wagn-doc
 1. Formatting
   
   Forms are content patterns.
+
   Forms are settings, meaning configurations that can apply to any set of cards.
     * default
 
@@ -99,6 +102,70 @@ wagn-doc
     * Checkboxes, radio buttons, and other form elements can be added using Pointers.
     * You can add help text that shows up when inclusions are being created or edited.
 
+1. Plus Cards
 
+  Plus cards are cards with a "+" in the name.
+  Creating a plus card automatically creates a card for each of its parts (unless they already exist).
 
+  Suppose we create a card named Joe's Coffee+hours.  
+ 
+  When we see this plus card, we know that we have two other cards: one named Joe's Coffee, and another named hours.  If they didn't already exist when we created the plus card, then they were created automatically.
 
+  More than one plus, a plus card can have more than one "+".  E.g. Joe's Coffee+menu+specials.
+
+1. Contextual Names
+
+  Contextual (or "relative") names are card names that can be interpreted differently based on context.
+
+  A few examples of contextual names:
+    * _
+    * _self
+    * _user
+    * +address
+    * _left+address
+
+  Card Content
+
+    Our planet is named {{_self|link}}. {{_|name}} has seven continents.  See [[+continents]]
+
+  Plus Card Content
+
+    Australia, Asia, Africa, Europe, Antarctica, and North and South America are all [[_right]] on planet [[_left]].
+
+  Tips
+    * These terms can be used as variables in regular web addresses.
+
+      [[http://{{Google base URI|raw}}{{_right|name}}]]
+    * In the context of Searches, _self refers to the left side of the card's name.
+
+      E.g., if John+friends is a Search card, then _self  refers to John, not John+friends. 
+
+1. Views
+  
+  Views are most often applied via inclusions or WQL, and are especially useful in formatting.
+    * content (default for inclusions) — shows the content of the card, without the surrounding card interface
+    * titled — content view, but after a header of the card's name. You can also make the title different from the card's actual name with "title:yournewtitle" in the inclusion markup
+    * open / closed — both show the content inside the surrounding card interface. Closed is the default for items in Searches and Pointers)
+    * labeled — card title followed by what content will fit on a single line, formatted so that the labels/content of multiple such inclusions line up
+    * link — instead of the card content, this just shows a link to the card, very much like using double square brackets for linking
+    * name — instead of the card content, this just shows the card's name
+    * linkname — like name, but puts in underscores instead of spaces (helpful when using inclusions to build URLs)
+    * url — shows the full, canonical URL for the card
+    * change — only applies to items in Searches and Pointers, showing who last edited each card and when. This is the view used on Recent.
+    * core — shows the processed card content without any enclosing HTML
+    * raw — shows the unprocessed card content, including markup. Note that any HTML will still be interpreted by your browser.
+
+  When including a Search or Pointer, you can also specify the view for each item (card) in the returned list, e.g., {{User+*type cards|item:link}}
+
+  In WQL syntax, item views are applied with WQL's usual key/value syntax, e.g.: {"type":"User", "view":"link"}
+
+  In special web addresses, you append views after a normal web address with "?view=" or "?item=", e.g. http://wagn.org/wagn/Fruit?view=closed or http://www.wagn.org/wagn/Image+*type+by_update?item=change
+
+  Tips
+    * In addition to setting a view for an inclusion, you can show and hide pieces of a view. To use more than one, separate them with a comma. Here are some that work and in what context:
+        + hide:menu on any view that has the menu - titled, open, and closed
+        + hide:paging on Searches
+        + show:comment_box will show the add-a comment box at the bottom of the card
+        + show:title_link will make the title a link to the card (in titled and open/closed - any view that shows the title)
+    * The name and linkname views are especially useful for contextual web addresses.
+ 
