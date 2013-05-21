@@ -23,4 +23,11 @@ wagn-doc
     * File
     
       On Wagn you upload files to File cards, then include the cards wherever you want a link to the file to appear.
+    * Image
+
+      To use a photograph or picture or any kind of image in Wagn:
+      + Including image cards
+      + Sizing and location
+
+        {{nymph|size:small}} {{nymph|float:left}}
 
