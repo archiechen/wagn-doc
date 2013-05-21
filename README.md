@@ -169,3 +169,10 @@ wagn-doc
         + show:title_link will make the title a link to the card (in titled and open/closed - any view that shows the title)
     * The name and linkname views are especially useful for contextual web addresses.
  
+1. Comments
+
+  Wagn lets you enable commenting on a card with a friendly comment box. User comments simply get added to the end of the card's content.
+
+  To let someone who is signed in be able to comment on a card, go to it's rules, click on the menu to the left of "...can comment on this card", select "Anyone signed in" and click "Save Changes".
+
+  You can't add comments to cards controlled by a *structure rule, but you can include a commentable card on them. For example the +discussion card below appears because "+discussion" is included.
